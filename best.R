@@ -16,11 +16,17 @@ best <- function(state, outcome) {
     } else if (outcome == "pneumonia") {
         column <- 23   
     } else {
-        #print("Invalid outcome entered. Please choose heart attack, heart disease or pneumonia.")
-        return("Error")
+        print("Invalid outcome entered. Please choose heart attack, heart disease or pneumonia.")
+        stop()
     }
     
+    
     #outcome[outcome$State == state & outcome$
+#     print(column)
+#     print(state)
+    dat[min(dat[dat[[7]] == state, column], na.rm = TRUE), 2]
     
     ## Return hospital name in that state with lowest 30-day death rate
+    vector_dat <- dat$State == state
+    
 }
